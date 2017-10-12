@@ -1,0 +1,1 @@
+C:\Users\Pepe\Source\Repos\BoardGameMTLab3WU-\BoardGrid\BoardGrid.csproj;arm

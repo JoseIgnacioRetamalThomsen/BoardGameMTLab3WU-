@@ -1,1 +1,1 @@
-\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\BoardGrid.csproj;x86
+C:\Users\Pepe\Source\Repos\BoardGameMTLab3WU-\BoardGrid\BoardGrid.csproj;x86
