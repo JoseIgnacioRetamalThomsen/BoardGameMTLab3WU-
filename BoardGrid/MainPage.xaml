@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="BoardGrid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BoardGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel x:Name="spMain" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <TextBlock Grid.Row="0"  Text="Please select the size of the grid required!" HorizontalAlignment="Center" VerticalAlignment="Top"  x:Name="userStatus" Height="100"/>
+        <StackPanel  Grid.Row="0" Orientation="Horizontal"  HorizontalAlignment="Center" >
+            <RadioButton Content="4x4" Tag="4" Checked="RadioButton_Checked"  Margin="3"/>
+            <RadioButton Content="5x5" Tag="5" Checked="RadioButton_Checked"  Margin="3"/>
+            <RadioButton Content="6x6" Tag="6" Checked="RadioButton_Checked"  Margin="3"/>
+            <RadioButton Content="7x7" Tag="7" Checked="RadioButton_Checked" Margin="3"/>
+            <RadioButton Content="8x8" Tag="8" Checked="RadioButton_Checked" Margin="3"/>
+        </StackPanel>
+        <StackPanel x:Name="paneForGrid" Orientation="Horizontal"  HorizontalAlignment="Center"  ></StackPanel>
+    </StackPanel>
+</Page>
