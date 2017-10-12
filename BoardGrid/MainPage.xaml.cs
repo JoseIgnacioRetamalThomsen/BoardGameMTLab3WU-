@@ -49,6 +49,8 @@ namespace BoardGrid
         }
 
         Ellipse mouse;
+        Ellipse move1;
+        Ellipse move2;
         private void setupThePieces()
         {
             _cats = (int)_Rows / 2;
@@ -123,7 +125,7 @@ namespace BoardGrid
             { }
             else
             {
-                Ellipse move1 = new Ellipse();
+                 move1 = new Ellipse();
                 move1.Fill = new SolidColorBrush(Colors.Gray);
                 move1.Height = 50;
                 move1.Width = 50;
@@ -139,7 +141,7 @@ namespace BoardGrid
 
             
                 //second move
-                Ellipse move2 = new Ellipse();
+                 move2 = new Ellipse();
                 move2.Fill = new SolidColorBrush(Colors.Gray);
                 move2.Height = 50;
                 move2.Width = 50;
@@ -159,6 +161,8 @@ namespace BoardGrid
             //((Ellipse)sender).SetValue(Grid.ColumnProperty);
             mouse.SetValue(Grid.ColumnProperty, ((Ellipse)sender).GetValue(Grid.ColumnProperty));
             mouse.SetValue(Grid.RowProperty, ((Ellipse)sender).GetValue(Grid.RowProperty));
+            myGrid.Children.Remove(move1);
+            myGrid.Children.Remove(move2);
 
 
         }
