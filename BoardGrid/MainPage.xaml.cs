@@ -56,14 +56,14 @@ namespace BoardGrid
             _cats = (int)_Rows / 2;
 
             //place the mouse in the board
-             mouse = new Ellipse();
+            mouse = new Ellipse();
             int xMouse, yMouse;
             xMouse = 3;
             yMouse = 0;
             mouse.SetValue(Grid.ColumnProperty, (double)xMouse);
             mouse.SetValue(Grid.RowProperty, (double)yMouse);
             mouse.Fill = new SolidColorBrush(Colors.Green);
-            myGrid.Name = "TheMouse";
+            mouse.Name = "TheMouse";
             myGrid.Children.Add(mouse);
 
             mouse.Tapped += Mouse_Taped;
@@ -84,7 +84,8 @@ namespace BoardGrid
                         x = i;
                     }
 
-                } else
+                }
+                else
                 {
                     if (i == 0)
                     {
@@ -95,8 +96,8 @@ namespace BoardGrid
 
                 cat.SetValue(Grid.ColumnProperty, (double)(x));
                 x += 2;
-                cat.SetValue(Grid.RowProperty, (double)_Rows);
-                cat.Name = "TheCat" + i;
+                cat.SetValue(Grid.RowProperty, ((double)_Rows - 1));
+                //cat.Name = "TheCat" + i;
                 myGrid.Children.Add(cat);
                 cat.Tapped += Cat_Taped;
             }
@@ -111,45 +112,96 @@ namespace BoardGrid
 
             Debug.WriteLine(((Ellipse)sender).Name + " taped");
             int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
-            int y= (int)((Ellipse)sender).GetValue(Grid.RowProperty) ;
+            int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
             cat = ((Ellipse)sender);
-            Debug.WriteLine(x);
+            Debug.WriteLine(((Ellipse)sender).GetValue(Grid.RowProperty));
 
             //move 1
             if ((x - 1) < 0)
             { }
-            else
+            else if (y != 0)
             {
-                catMove1 = new Ellipse();
-                catMove1.Fill = new SolidColorBrush(Colors.Gray);
-                catMove1.Height = 50;
-                catMove1.Width = 50;
-                catMove1.SetValue(Grid.ColumnProperty, (x - 1));
-                if(y==_Rows)
+                //check if the move is valid
+                Boolean invalidMove = false;
+                int xMove = x - 1;
+                int yMove = (y - 1);
+                int xOther, yOther;
+                foreach (UIElement uiElement in myGrid.Children)
                 {
-                    y = y - 1;
+                    if (uiElement.GetType() == typeof(Ellipse))
+                    {
+                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                        if (xMove == xOther && yMove == yOther)
+                        {
+                            invalidMove = true;
+                        }
+
+
+                    }
                 }
-                catMove1.SetValue(Grid.RowProperty, (y - 1));
-                catMove1.Tapped += CAT_Move1_Tapped;
-                myGrid.Children.Add(catMove1);
-            }
+
+                if (invalidMove)
+                { }
+                else
+                {
+                    catMove1 = new Ellipse();
+                    catMove1.Fill = new SolidColorBrush(Colors.Gray);
+                    catMove1.Height = 50;
+                    catMove1.Width = 50;
+                    catMove1.SetValue(Grid.ColumnProperty, xMove);
+
+                    catMove1.SetValue(Grid.RowProperty, yMove);
+                    catMove1.Tapped += CAT_Move1_Tapped;
+                    myGrid.Children.Add(catMove1);
+                }
+            }//end else if is insede
 
             //move 2
             if ((x + 1) >= _Rows)
             { }
-            else
+            else if (y != 0)
             {
+                Boolean invalidMove = false;
+
+                int xMove = x + 1;
+                int yMove = (y - 1);
+                int xOther, yOther;
+
+                foreach (UIElement uiElement in myGrid.Children)
+                {
+                    // Debug.WriteLine(elli.GetValue(Grid.ColumnProperty));
+                    if (uiElement.GetType() == typeof(Ellipse))
+                    {
+                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                        if (xMove == xOther && yMove == yOther)
+                        {
+                            invalidMove = true;
+                        }
 
 
-                //second move
-                catMove2 = new Ellipse();
-                catMove2.Fill = new SolidColorBrush(Colors.Gray);
-                catMove2.Height = 50;
-                catMove2.Width = 50;
-                catMove2.SetValue(Grid.ColumnProperty, (x + 1));
-                catMove2.SetValue(Grid.RowProperty, (y - 1));
-                myGrid.Children.Add(catMove2);
-                catMove2.Tapped += CAT_Move1_Tapped;
+                    }
+                }
+
+
+
+                if (invalidMove)
+                { }
+                else
+                {
+
+
+                    //second move
+                    catMove2 = new Ellipse();
+                    catMove2.Fill = new SolidColorBrush(Colors.Gray);
+                    catMove2.Height = 50;
+                    catMove2.Width = 50;
+                    catMove2.SetValue(Grid.ColumnProperty, xMove);
+                    catMove2.SetValue(Grid.RowProperty, yMove);
+                    myGrid.Children.Add(catMove2);
+                    catMove2.Tapped += CAT_Move1_Tapped;
+                }
             }
 
         }
@@ -158,7 +210,7 @@ namespace BoardGrid
         {
             cat.SetValue(Grid.ColumnProperty, ((Ellipse)sender).GetValue(Grid.ColumnProperty));
             cat.SetValue(Grid.RowProperty, ((Ellipse)sender).GetValue(Grid.RowProperty));
-           myGrid.Children.Remove(catMove1);
+            myGrid.Children.Remove(catMove1);
             myGrid.Children.Remove(catMove2);
         }
 
@@ -167,38 +219,85 @@ namespace BoardGrid
             Debug.WriteLine("mouse taped");
             int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
             int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
-            Debug.WriteLine("x " + x);
-            Debug.WriteLine("y " + y);
+
 
             // first move
             if ((x - 1) < 0)
             { }
             else
             {
-                 move1 = new Ellipse();
-                move1.Fill = new SolidColorBrush(Colors.Gray);
-                move1.Height = 50;
-                move1.Width = 50;
-                move1.SetValue(Grid.ColumnProperty, (x - 1));
-                move1.SetValue(Grid.RowProperty, (y + 1));
-                move1.Tapped += Move1_Tapped;
-                myGrid.Children.Add(move1);
+                Boolean invalidMove = false;
+                Debug.WriteLine(x);
+                Debug.WriteLine(y);
+                int xMove = x - 1;
+                int yMove = (y + 1);
+                int xOther, yOther;
+                foreach (UIElement uiElement in myGrid.Children)
+                {
+                    if (uiElement.GetType() == typeof(Ellipse))
+                    {
+                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                        if (xMove == xOther && yMove == yOther)
+                        {
+                            invalidMove = true;
+                        }
+
+
+                    }
+                }
+                if (invalidMove)
+                { }
+                else
+                {
+                    move1 = new Ellipse();
+                    move1.Fill = new SolidColorBrush(Colors.Gray);
+                    move1.Height = 50;
+                    move1.Width = 50;
+                    move1.SetValue(Grid.ColumnProperty, (x - 1));
+                    move1.SetValue(Grid.RowProperty, (y + 1));
+                    move1.Tapped += Move1_Tapped;
+                    myGrid.Children.Add(move1);
+                }
             }
             if ((x + 1) >= _Rows)
             { }
             else
             {
+                Boolean invalidMove = false;
 
-            
-                //second move
-                 move2 = new Ellipse();
-                move2.Fill = new SolidColorBrush(Colors.Gray);
-                move2.Height = 50;
-                move2.Width = 50;
-                move2.SetValue(Grid.ColumnProperty, (x + 1));
-                move2.SetValue(Grid.RowProperty, (y + 1));
-                myGrid.Children.Add(move2);
-                move2.Tapped += Move1_Tapped;
+                int xMove = x + 1;
+                int yMove = (y + 1);
+                int xOther, yOther;
+                foreach (UIElement uiElement in myGrid.Children)
+                {
+                    if (uiElement.GetType() == typeof(Ellipse))
+                    {
+                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                        if (xMove == xOther && yMove == yOther)
+                        {
+                            invalidMove = true;
+                        }
+
+
+                    }
+                }
+
+                if (invalidMove)
+                { }
+                else
+                {
+                    //second move
+                    move2 = new Ellipse();
+                    move2.Fill = new SolidColorBrush(Colors.Gray);
+                    move2.Height = 50;
+                    move2.Width = 50;
+                    move2.SetValue(Grid.ColumnProperty, (x + 1));
+                    move2.SetValue(Grid.RowProperty, (y + 1));
+                    myGrid.Children.Add(move2);
+                    move2.Tapped += Move1_Tapped;
+                }
             }
 
 
@@ -274,15 +373,15 @@ namespace BoardGrid
 
                             sqr.Background = new SolidColorBrush(Colors.White);
                         }
-                                                                      
+
                         myGrid.Children.Add(sqr);
                         #endregion
                     }
 
                 }
-                                                    
+
             paneForGrid.Children.Add(myGrid);
-                        
+
         }
     }
 }
