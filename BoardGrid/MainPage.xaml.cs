@@ -103,14 +103,64 @@ namespace BoardGrid
 
         }
 
+        Ellipse cat;
+        Ellipse catMove1;
+        Ellipse catMove2;
         private void Cat_Taped(object sender, TappedRoutedEventArgs e)
         {
 
             Debug.WriteLine(((Ellipse)sender).Name + " taped");
             int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
+            int y= (int)((Ellipse)sender).GetValue(Grid.RowProperty) ;
+            cat = ((Ellipse)sender);
             Debug.WriteLine(x);
+
+            //move 1
+            if ((x - 1) < 0)
+            { }
+            else
+            {
+                catMove1 = new Ellipse();
+                catMove1.Fill = new SolidColorBrush(Colors.Gray);
+                catMove1.Height = 50;
+                catMove1.Width = 50;
+                catMove1.SetValue(Grid.ColumnProperty, (x - 1));
+                if(y==_Rows)
+                {
+                    y = y - 1;
+                }
+                catMove1.SetValue(Grid.RowProperty, (y - 1));
+                catMove1.Tapped += CAT_Move1_Tapped;
+                myGrid.Children.Add(catMove1);
+            }
+
+            //move 2
+            if ((x + 1) >= _Rows)
+            { }
+            else
+            {
+
+
+                //second move
+                catMove2 = new Ellipse();
+                catMove2.Fill = new SolidColorBrush(Colors.Gray);
+                catMove2.Height = 50;
+                catMove2.Width = 50;
+                catMove2.SetValue(Grid.ColumnProperty, (x + 1));
+                catMove2.SetValue(Grid.RowProperty, (y - 1));
+                myGrid.Children.Add(catMove2);
+                catMove2.Tapped += CAT_Move1_Tapped;
+            }
+
         }
 
+        private void CAT_Move1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            cat.SetValue(Grid.ColumnProperty, ((Ellipse)sender).GetValue(Grid.ColumnProperty));
+            cat.SetValue(Grid.RowProperty, ((Ellipse)sender).GetValue(Grid.RowProperty));
+           myGrid.Children.Remove(catMove1);
+            myGrid.Children.Remove(catMove2);
+        }
 
         private void Mouse_Taped(object sender, TappedRoutedEventArgs e)
         {
