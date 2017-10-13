@@ -48,6 +48,8 @@ namespace BoardGrid
             setupThePieces();
         }
 
+        Boolean mouseMove = true;
+
         Ellipse mouse;
         Ellipse move1;
         Ellipse move2;
@@ -109,102 +111,104 @@ namespace BoardGrid
         Ellipse catMove2;
         private void Cat_Taped(object sender, TappedRoutedEventArgs e)
         {
-
-            Debug.WriteLine(((Ellipse)sender).Name + " taped");
-            int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
-            int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
-            cat = ((Ellipse)sender);
-            Debug.WriteLine(((Ellipse)sender).GetValue(Grid.RowProperty));
-
-            //move 1
-            if ((x - 1) < 0)
-            { }
-            else if (y != 0)
+            if (!mouseMove)
             {
-                //check if the move is valid
-                Boolean invalidMove = false;
-                int xMove = x - 1;
-                int yMove = (y - 1);
-                int xOther, yOther;
-                foreach (UIElement uiElement in myGrid.Children)
+                Debug.WriteLine(((Ellipse)sender).Name + " taped");
+                int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
+                int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
+                cat = ((Ellipse)sender);
+                Debug.WriteLine(((Ellipse)sender).GetValue(Grid.RowProperty));
+
+                //move 1
+                if ((x - 1) < 0)
+                { }
+                else if (y != 0)
                 {
-                    if (uiElement.GetType() == typeof(Ellipse))
+                    //check if the move is valid
+                    Boolean invalidMove = false;
+                    int xMove = x - 1;
+                    int yMove = (y - 1);
+                    int xOther, yOther;
+                    foreach (UIElement uiElement in myGrid.Children)
                     {
-                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
-                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
-                        if (xMove == xOther && yMove == yOther)
+                        if (uiElement.GetType() == typeof(Ellipse))
                         {
-                            invalidMove = true;
+                            xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                            yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                            if (xMove == xOther && yMove == yOther)
+                            {
+                                invalidMove = true;
+                            }
+
+
                         }
+                    }
+
+                    if (invalidMove)
+                    { }
+                    else
+                    {
+                        catMove1 = new Ellipse();
+                        catMove1.Fill = new SolidColorBrush(Colors.Gray);
+                        catMove1.Height = 50;
+                        catMove1.Width = 50;
+                        catMove1.SetValue(Grid.ColumnProperty, xMove);
+
+                        catMove1.SetValue(Grid.RowProperty, yMove);
+                        catMove1.Tapped += CAT_Move1_Tapped;
+                        myGrid.Children.Add(catMove1);
+                    }
+                }//end else if is insede
+
+                //move 2
+                if ((x + 1) >= _Rows)
+                { }
+                else if (y != 0)
+                {
+                    Boolean invalidMove = false;
+
+                    int xMove = x + 1;
+                    int yMove = (y - 1);
+                    int xOther, yOther;
+
+                    foreach (UIElement uiElement in myGrid.Children)
+                    {
+                        // Debug.WriteLine(elli.GetValue(Grid.ColumnProperty));
+                        if (uiElement.GetType() == typeof(Ellipse))
+                        {
+                            xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                            yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                            if (xMove == xOther && yMove == yOther)
+                            {
+                                invalidMove = true;
+                            }
 
 
+                        }
+                    }
+
+
+
+                    if (invalidMove)
+                    { }
+                    else
+                    {
+
+
+                        //second move
+                        catMove2 = new Ellipse();
+                        catMove2.Fill = new SolidColorBrush(Colors.Gray);
+                        catMove2.Height = 50;
+                        catMove2.Width = 50;
+                        catMove2.SetValue(Grid.ColumnProperty, xMove);
+                        catMove2.SetValue(Grid.RowProperty, yMove);
+                        myGrid.Children.Add(catMove2);
+                        catMove2.Tapped += CAT_Move1_Tapped;
                     }
                 }
+            } //!mouse move
 
-                if (invalidMove)
-                { }
-                else
-                {
-                    catMove1 = new Ellipse();
-                    catMove1.Fill = new SolidColorBrush(Colors.Gray);
-                    catMove1.Height = 50;
-                    catMove1.Width = 50;
-                    catMove1.SetValue(Grid.ColumnProperty, xMove);
-
-                    catMove1.SetValue(Grid.RowProperty, yMove);
-                    catMove1.Tapped += CAT_Move1_Tapped;
-                    myGrid.Children.Add(catMove1);
-                }
-            }//end else if is insede
-
-            //move 2
-            if ((x + 1) >= _Rows)
-            { }
-            else if (y != 0)
-            {
-                Boolean invalidMove = false;
-
-                int xMove = x + 1;
-                int yMove = (y - 1);
-                int xOther, yOther;
-
-                foreach (UIElement uiElement in myGrid.Children)
-                {
-                    // Debug.WriteLine(elli.GetValue(Grid.ColumnProperty));
-                    if (uiElement.GetType() == typeof(Ellipse))
-                    {
-                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
-                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
-                        if (xMove == xOther && yMove == yOther)
-                        {
-                            invalidMove = true;
-                        }
-
-
-                    }
-                }
-
-
-
-                if (invalidMove)
-                { }
-                else
-                {
-
-
-                    //second move
-                    catMove2 = new Ellipse();
-                    catMove2.Fill = new SolidColorBrush(Colors.Gray);
-                    catMove2.Height = 50;
-                    catMove2.Width = 50;
-                    catMove2.SetValue(Grid.ColumnProperty, xMove);
-                    catMove2.SetValue(Grid.RowProperty, yMove);
-                    myGrid.Children.Add(catMove2);
-                    catMove2.Tapped += CAT_Move1_Tapped;
-                }
-            }
-
-        }
+        }//cat tapped
 
         private void CAT_Move1_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -212,98 +216,101 @@ namespace BoardGrid
             cat.SetValue(Grid.RowProperty, ((Ellipse)sender).GetValue(Grid.RowProperty));
             myGrid.Children.Remove(catMove1);
             myGrid.Children.Remove(catMove2);
+            mouseMove = true;
         }
 
         private void Mouse_Taped(object sender, TappedRoutedEventArgs e)
         {
-            Debug.WriteLine("mouse taped");
-            int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
-            int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
-
-
-            // first move
-            if ((x - 1) < 0)
-            { }
-            else
+            if (mouseMove)
             {
-                Boolean invalidMove = false;
-                Debug.WriteLine(x);
-                Debug.WriteLine(y);
-                int xMove = x - 1;
-                int yMove = (y + 1);
-                int xOther, yOther;
-                foreach (UIElement uiElement in myGrid.Children)
-                {
-                    if (uiElement.GetType() == typeof(Ellipse))
-                    {
-                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
-                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
-                        if (xMove == xOther && yMove == yOther)
-                        {
-                            invalidMove = true;
-                        }
+                Debug.WriteLine("mouse taped");
+                int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
+                int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
 
 
-                    }
-                }
-                if (invalidMove)
+                // first move
+                if ((x - 1) < 0)
                 { }
                 else
                 {
-                    move1 = new Ellipse();
-                    move1.Fill = new SolidColorBrush(Colors.Gray);
-                    move1.Height = 50;
-                    move1.Width = 50;
-                    move1.SetValue(Grid.ColumnProperty, (x - 1));
-                    move1.SetValue(Grid.RowProperty, (y + 1));
-                    move1.Tapped += Move1_Tapped;
-                    myGrid.Children.Add(move1);
-                }
-            }
-            if ((x + 1) >= _Rows)
-            { }
-            else
-            {
-                Boolean invalidMove = false;
-
-                int xMove = x + 1;
-                int yMove = (y + 1);
-                int xOther, yOther;
-                foreach (UIElement uiElement in myGrid.Children)
-                {
-                    if (uiElement.GetType() == typeof(Ellipse))
+                    Boolean invalidMove = false;
+                    Debug.WriteLine(x);
+                    Debug.WriteLine(y);
+                    int xMove = x - 1;
+                    int yMove = (y + 1);
+                    int xOther, yOther;
+                    foreach (UIElement uiElement in myGrid.Children)
                     {
-                        xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
-                        yOther = (int)uiElement.GetValue(Grid.RowProperty);
-                        if (xMove == xOther && yMove == yOther)
+                        if (uiElement.GetType() == typeof(Ellipse))
                         {
-                            invalidMove = true;
+                            xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                            yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                            if (xMove == xOther && yMove == yOther)
+                            {
+                                invalidMove = true;
+                            }
+
+
                         }
-
-
+                    }
+                    if (invalidMove)
+                    { }
+                    else
+                    {
+                        move1 = new Ellipse();
+                        move1.Fill = new SolidColorBrush(Colors.Gray);
+                        move1.Height = 50;
+                        move1.Width = 50;
+                        move1.SetValue(Grid.ColumnProperty, (x - 1));
+                        move1.SetValue(Grid.RowProperty, (y + 1));
+                        move1.Tapped += Move1_Tapped;
+                        myGrid.Children.Add(move1);
                     }
                 }
-
-                if (invalidMove)
+                if ((x + 1) >= _Rows)
                 { }
                 else
                 {
-                    //second move
-                    move2 = new Ellipse();
-                    move2.Fill = new SolidColorBrush(Colors.Gray);
-                    move2.Height = 50;
-                    move2.Width = 50;
-                    move2.SetValue(Grid.ColumnProperty, (x + 1));
-                    move2.SetValue(Grid.RowProperty, (y + 1));
-                    myGrid.Children.Add(move2);
-                    move2.Tapped += Move1_Tapped;
+                    Boolean invalidMove = false;
+
+                    int xMove = x + 1;
+                    int yMove = (y + 1);
+                    int xOther, yOther;
+                    foreach (UIElement uiElement in myGrid.Children)
+                    {
+                        if (uiElement.GetType() == typeof(Ellipse))
+                        {
+                            xOther = (int)uiElement.GetValue(Grid.ColumnProperty);
+                            yOther = (int)uiElement.GetValue(Grid.RowProperty);
+                            if (xMove == xOther && yMove == yOther)
+                            {
+                                invalidMove = true;
+                            }
+
+
+                        }
+                    }
+
+                    if (invalidMove)
+                    { }
+                    else
+                    {
+                        //second move
+                        move2 = new Ellipse();
+                        move2.Fill = new SolidColorBrush(Colors.Gray);
+                        move2.Height = 50;
+                        move2.Width = 50;
+                        move2.SetValue(Grid.ColumnProperty, (x + 1));
+                        move2.SetValue(Grid.RowProperty, (y + 1));
+                        myGrid.Children.Add(move2);
+                        move2.Tapped += Move1_Tapped;
+                    }
                 }
-            }
 
 
+            }//mouse move
 
-
-        }
+        }//mouse tapped
         private void Move1_Tapped(object sender, TappedRoutedEventArgs e)
         {
             // Debug.WriteLine("move 1 tapped");
@@ -312,7 +319,7 @@ namespace BoardGrid
             mouse.SetValue(Grid.RowProperty, ((Ellipse)sender).GetValue(Grid.RowProperty));
             myGrid.Children.Remove(move1);
             myGrid.Children.Remove(move2);
-
+            mouseMove = false;
 
         }
 

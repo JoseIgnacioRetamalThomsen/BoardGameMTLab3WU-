@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Pepe\Source\Repos\BoardGameMTLab3WU-\BoardGrid\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-10-13T21:24:43.239</Modified>
+      <Modified>2017-10-13T21:50:01.330</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Pepe\Source\Repos\BoardGameMTLab3WU-\BoardGrid\bin\x86\Debug\BoardGrid.exe">
       <PackagePath>entrypoint\BoardGrid.exe</PackagePath>
-      <Modified>2017-10-13T21:24:43.009</Modified>
+      <Modified>2017-10-13T21:50:01.106</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Pepe\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -504,7 +504,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Pepe\Source\Repos\BoardGameMTLab3WU-\BoardGrid\bin\x86\Debug\Core\BoardGrid.exe">
       <PackagePath>BoardGrid.exe</PackagePath>
-      <Modified>2017-10-13T21:24:43.236</Modified>
+      <Modified>2017-10-13T21:50:01.327</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
