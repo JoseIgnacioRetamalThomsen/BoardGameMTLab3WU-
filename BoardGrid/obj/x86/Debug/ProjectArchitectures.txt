@@ -1,1 +1,1 @@
-C:\Users\Pepe\Source\Repos\BoardGameMTLab3WU-\BoardGrid\BoardGrid.csproj;x86
+\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\BoardGrid.csproj;x86

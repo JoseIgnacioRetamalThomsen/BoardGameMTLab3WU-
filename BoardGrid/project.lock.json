@@ -1,7 +1,8 @@
 {
-  "version": 3,
+  "locked": false,
+  "version": 2,
   "targets": {
-    "UAP,Version=v10.0.10586": {
+    "UAP,Version=v10.0": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1878,7 +1879,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-arm": {
+    "UAP,Version=v10.0/win10-arm": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3621,7 +3622,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-arm-aot": {
+    "UAP,Version=v10.0/win10-arm-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5321,7 +5322,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x64": {
+    "UAP,Version=v10.0/win10-x64": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7073,7 +7074,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x64-aot": {
+    "UAP,Version=v10.0/win10-x64-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8773,7 +8774,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x86": {
+    "UAP,Version=v10.0/win10-x86": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10525,7 +10526,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x86-aot": {
+    "UAP,Version=v10.0/win10-x86-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -15607,54 +15608,8 @@
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
     ],
-    "UAP,Version=v10.0.10586": []
+    "UAP,Version=v10.0": []
   },
-  "packageFolders": {
-    "C:\\Users\\Pepe\\.nuget\\packages\\": {}
-  },
-  "project": {
-    "restore": {
-      "projectUniqueName": "C:\\Users\\Pepe\\Source\\Repos\\BoardGameMTLab3WU-\\BoardGrid\\BoardGrid.csproj",
-      "projectName": "BoardGrid",
-      "projectPath": "C:\\Users\\Pepe\\Source\\Repos\\BoardGameMTLab3WU-\\BoardGrid\\BoardGrid.csproj",
-      "projectJsonPath": "C:\\Users\\Pepe\\Source\\Repos\\BoardGameMTLab3WU-\\BoardGrid\\project.json",
-      "packagesPath": "C:\\Users\\Pepe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pepe\\Source\\Repos\\BoardGameMTLab3WU-\\BoardGrid\\obj\\",
-      "projectStyle": "ProjectJson",
-      "configFilePaths": [
-        "C:\\Users\\Pepe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-      ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
-      }
-    },
-    "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
-    },
-    "frameworks": {
-      "uap10.0.10586": {}
-    },
-    "runtimes": {
-      "win10-arm": {
-        "#import": []
-      },
-      "win10-arm-aot": {
-        "#import": []
-      },
-      "win10-x64": {
-        "#import": []
-      },
-      "win10-x64-aot": {
-        "#import": []
-      },
-      "win10-x86": {
-        "#import": []
-      },
-      "win10-x86-aot": {
-        "#import": []
-      }
-    }
-  }
+  "tools": {},
+  "projectFileToolGroups": {}
 }

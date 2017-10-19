@@ -10,19 +10,19 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>11937e03-db85-4639-a8ce-c38ab6d930d0</PackageIdentityName>
     <PackageIdentityPublisher>CN=g00351330</PackageIdentityPublisher>
-    <IntermediateOutputPath>\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\bin\x64\Debug\BoardGrid.exe">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\BoardGrid.exe">
       <PackagePath>entrypoint\BoardGrid.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\g00351330\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
@@ -334,40 +334,40 @@
     <AppxPackagedFile Include="C:\Users\g00351330\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\bin\x64\Debug\BoardGrid.xr.xml">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\BoardGrid.xr.xml">
       <PackagePath>BoardGrid.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\TempCSharp\BoardGrid\BoardGrid\bin\x64\Debug\Core\BoardGrid.exe">
+    <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\Core\BoardGrid.exe">
       <PackagePath>BoardGrid.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
