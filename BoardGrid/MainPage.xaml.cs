@@ -46,7 +46,7 @@ namespace BoardGrid
             userStatus.Text = "some string " + _Rows;
             createGrid();
             setupThePieces();
-
+            //comit this
             Grid findIt = new Grid();
             findIt = (Grid)FindName("ChessBoard");
 
