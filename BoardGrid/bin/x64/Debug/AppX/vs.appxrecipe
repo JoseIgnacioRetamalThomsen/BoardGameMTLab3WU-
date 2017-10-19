@@ -28,13 +28,13 @@
     <AppXManifest Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-10-19T14:55:22.095</Modified>
+      <Modified>2017-10-19T15:17:53.391</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\BoardGrid.exe">
       <PackagePath>entrypoint\BoardGrid.exe</PackagePath>
-      <Modified>2017-10-19T14:55:21.346</Modified>
+      <Modified>2017-10-19T15:17:52.658</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\g00351330\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -494,7 +494,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="\\gwscistud.gmadtree.gmit.ie\STUD\G00351330\Documents\Visual Studio 2015\boardGameV1\BoardGrid\bin\x64\Debug\Core\BoardGrid.exe">
       <PackagePath>BoardGrid.exe</PackagePath>
-      <Modified>2017-10-19T14:55:22.048</Modified>
+      <Modified>2017-10-19T15:17:53.344</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

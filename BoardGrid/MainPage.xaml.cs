@@ -53,7 +53,7 @@ namespace BoardGrid
         }
 
         Boolean mouseMove = true;
-        Boolean someOneIsMoving = false;
+       
 
         Ellipse mouse;
         Ellipse move1;
@@ -116,13 +116,16 @@ namespace BoardGrid
         Ellipse catMove2;
         private void Cat_Taped(object sender, TappedRoutedEventArgs e)
         {
-            if (!someOneIsMoving)
-            {
 
+            
+               
+                
+                
                 if (!mouseMove)
                 {
-
-                    Debug.WriteLine(((Ellipse)sender).Name + " taped");
+                myGrid.Children.Remove(catMove1);
+                myGrid.Children.Remove(catMove2);
+                Debug.WriteLine(((Ellipse)sender).Name + " taped");
                     int x = (int)((Ellipse)sender).GetValue(Grid.ColumnProperty);
                     int y = (int)((Ellipse)sender).GetValue(Grid.RowProperty);
                     cat = ((Ellipse)sender);
@@ -163,7 +166,7 @@ namespace BoardGrid
                             catMove1.SetValue(Grid.RowProperty, yMove);
                             catMove1.Tapped += CAT_Move1_Tapped;
                             myGrid.Children.Add(catMove1);
-                            someOneIsMoving = true;
+                            
                         }
                     }//end else if is insede
                     //move 2
@@ -208,15 +211,13 @@ namespace BoardGrid
                             catMove2.SetValue(Grid.RowProperty, yMove);
                             myGrid.Children.Add(catMove2);
                             catMove2.Tapped += CAT_Move1_Tapped;
-                            someOneIsMoving = true;
+                            
                         }
                     }
                 } //!mouse move
 
-            }
-            else
-            {
-            }
+            
+          
         }//cat tapped
 
         private void CAT_Move1_Tapped(object sender, TappedRoutedEventArgs e)
@@ -227,13 +228,12 @@ namespace BoardGrid
             myGrid.Children.Remove(catMove1);
             myGrid.Children.Remove(catMove2);
             mouseMove = true;
-            someOneIsMoving = false;
+            
         }
 
         private void Mouse_Taped(object sender, TappedRoutedEventArgs e)
         {
-            if (!someOneIsMoving)
-            {
+           
 
                 if (mouseMove)
                 {
@@ -279,7 +279,7 @@ namespace BoardGrid
                             move1.Tapped += Move1_Tapped;
 
                             myGrid.Children.Add(move1);
-                            someOneIsMoving = true;
+                            
                         }
                     }
                     if ((x + 1) >= _Rows)
@@ -317,14 +317,14 @@ namespace BoardGrid
                             move2.SetValue(Grid.RowProperty, (y + 1));
                             myGrid.Children.Add(move2);
                             move2.Tapped += Move1_Tapped;
-                            someOneIsMoving = true;
+                            
                         }
                     }
 
 
                 }//mouse move
 
-            }
+            
         }//mouse tapped
         private void Move1_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -336,7 +336,7 @@ namespace BoardGrid
             myGrid.Children.Remove(move2);
             mouseMove = false;
 
-            someOneIsMoving = false;
+            
 
         }
 
